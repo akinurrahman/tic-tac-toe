@@ -3,16 +3,23 @@ import Box from "./Box";
 import { AppContext } from "./AppState";
 
 const Board = () => {
+  // Access context values using useContext hook
   const { state, handleClick, isWinner, playAgain } = useContext(AppContext);
 
   return (
     <div className="board">
-      {isWinner ? (
+      {isWinner !== null ? (
+        // Display winner message and play again button if there's a winner
         <>
-          <h1 className="winner-message">{isWinner} won</h1>
-          <button className="play-again" onClick={playAgain}>Play Again</button>
+          <h1 className="winner-message">
+            {isWinner && `${isWinner} won the Game`}
+          </h1>
+          <button className="play-again-button" onClick={playAgain}>
+            Play Again
+          </button>
         </>
       ) : (
+        // Render the game board if no winner yet
         <>
           <div className="board-row">
             <Box onClickProp={() => handleClick(0)} value={state[0]} />

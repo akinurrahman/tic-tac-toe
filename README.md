@@ -17,7 +17,4 @@ git clone https://github.com/akinurrahman/tic-tac-toe.git
 
 ## Technologies Used
 
-React
-JavaScript
-HTML
-CSS
+React, JavaScript, HTML, CSS
